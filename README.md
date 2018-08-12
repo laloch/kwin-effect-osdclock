@@ -1,5 +1,5 @@
 # kwin-effect-osdclock
-KWin effect that displays clock at the corner of the screen
+KWin effect that displays transparent click-through clock at the corner of the screen
 
 ## Screenshots
 ![](/screenshots/0.png)
