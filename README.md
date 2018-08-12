@@ -1,6 +1,9 @@
 # kwin-effect-osdclock
 KWin effect that displays clock at the corner of the screen
 
+## Screenshots
+![](/screenshots/0.png)
+
 ## Build and install
 ```bash
 git clone https://github.com/laloch/kwin-effect-osdclock.git
