@@ -1,0 +1,5 @@
+File=osdclock.kcfg
+ClassName=OsdClockConfig
+NameSpace=KWin
+Singleton=true
+Mutators=true
