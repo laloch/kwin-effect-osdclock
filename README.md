@@ -33,3 +33,5 @@ sudo make install
 * add 12h display format
 * add an option to show/hide date
 * adjustable date display format
+* fix display region calculation and clipping
+* fix scaling on HiDPI displays
