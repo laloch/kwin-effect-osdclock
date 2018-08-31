@@ -4,6 +4,21 @@ KWin effect that displays transparent click-through clock at the corner of the s
 ## Screenshots
 ![](/screenshots/0.png)
 
+## Dependencies
+* kwin
+
+## Build dependencies
+### Common
+* cmake
+* extra-cmake-modules
+* git
+
+### Fedora
+* dbus-devel
+
+### Ubuntu / Debian
+* libdbus-1-dev
+
 ## Build and install
 ```bash
 git clone https://github.com/laloch/kwin-effect-osdclock.git
