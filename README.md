@@ -18,6 +18,7 @@ KWin effect that displays transparent click-through clock at the corner of the s
 
 ### Ubuntu / Debian
 * libdbus-1-dev
+* kwin-dev
 
 ## Build and install
 ```bash
