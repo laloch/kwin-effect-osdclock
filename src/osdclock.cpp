@@ -36,6 +36,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <math.h>
 #include <QPainter>
 #include <QVector2D>
+#include <QTimer>
 
 #include "blur.h"
 
@@ -49,6 +50,11 @@ OsdClockEffect::OsdClockEffect()
             this, &OsdClockEffect::numberScreensChanged);
     connect(effects, &EffectsHandler::screenGeometryChanged,
             this, &OsdClockEffect::screenGeometryChanged);
+
+    repaintTimer = new QTimer(this);
+    repaintTimer->setInterval(1000);
+    connect(repaintTimer, &QTimer::timeout, this, &OsdClockEffect::repaintTimerTick);
+    repaintTimer->start();
 }
 
 void OsdClockEffect::numberScreensChanged()
@@ -122,13 +128,6 @@ void OsdClockEffect::paintWindow(EffectWindow* w, int mask, QRegion region, Wind
 void OsdClockEffect::paintScreen(int mask, QRegion region, ScreenPaintData& data)
 {
     effects->paintScreen(mask, region, data);
-    if (!lastRenderTime.isValid() ||
-        lastRenderTime.time().minute() != QTime::currentTime().minute())
-    {
-        lastRenderTime = QDateTime::currentDateTime();
-        img = clockTextImage(lastRenderTime);
-        effects->addRepaint(clockTextRect);
-    }
     if (effects->isOpenGLCompositing()) {
         paintGL(data.projectionMatrix());
         glFinish(); // make sure all rendering is done
@@ -232,4 +231,15 @@ QImage OsdClockEffect::clockTextImage(QDateTime t)
     painter.drawImage(0, 0, blur);
     painter.end();
     return im;
+}
+
+void OsdClockEffect::repaintTimerTick()
+{
+    if (!lastRenderTime.isValid() ||
+        lastRenderTime.time().minute() != QTime::currentTime().minute())
+    {
+        lastRenderTime = QDateTime::currentDateTime();
+        img = clockTextImage(lastRenderTime);
+        effects->addRepaint(clockTextRect);
+    }
 }

@@ -27,6 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <kwineffects.h>
 #include <kwingltexture.h>
 
+class QTimer;
+
 class OsdClockEffect
     : public KWin::Effect
 {
@@ -78,6 +80,7 @@ private:
     void paintXrender();
 #endif
     void paintQPainter();
+    void repaintTimerTick();
     QImage clockTextImage(QDateTime t);
     QImage img;
     QDateTime lastRenderTime;
@@ -90,6 +93,7 @@ private:
     QColor textColor;
     QRect clockTextRect;
     int textAlign;
+    QTimer *repaintTimer;
 };
 
 #endif
