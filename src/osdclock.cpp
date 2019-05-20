@@ -85,7 +85,7 @@ void OsdClockEffect::reconfigure(ReconfigureFlags)
     textColor.setAlphaF(textAlpha);
 
     QFontMetrics fm(textFont);
-    int textWidth = fm.width("00:00");
+    int textWidth = fm.horizontalAdvance("00:00");
     //int textHeigt = fm.height();
 
     switch(textPosition) {
