@@ -35,8 +35,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocalizedString>
 #include <math.h>
 #include <QPainter>
-#include <QVector2D>
+#include <QPalette>
 #include <QTimer>
+#include <QVector2D>
 
 #include "blur.h"
 
