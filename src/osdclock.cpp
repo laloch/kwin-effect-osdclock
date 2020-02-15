@@ -121,12 +121,12 @@ void OsdClockEffect::prePaintScreen(ScreenPrePaintData& data, int time)
     data.paint += clockTextRect;
 }
 
-void OsdClockEffect::paintWindow(EffectWindow* w, int mask, QRegion region, WindowPaintData& data)
+void OsdClockEffect::paintWindow(EffectWindow* w, int mask, const QRegion &region, WindowPaintData& data)
 {
     effects->paintWindow(w, mask, region, data);
 }
 
-void OsdClockEffect::paintScreen(int mask, QRegion region, ScreenPaintData& data)
+void OsdClockEffect::paintScreen(int mask, const QRegion &region, ScreenPaintData& data)
 {
     effects->paintScreen(mask, region, data);
     if (effects->isOpenGLCompositing()) {

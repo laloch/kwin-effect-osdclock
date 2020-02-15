@@ -45,8 +45,8 @@ public:
     OsdClockEffect();
     virtual void reconfigure(ReconfigureFlags);
     virtual void prePaintScreen(KWin::ScreenPrePaintData& data, int time);
-    virtual void paintScreen(int mask, QRegion region, KWin::ScreenPaintData& data);
-    virtual void paintWindow(KWin::EffectWindow* w, int mask, QRegion region, KWin::WindowPaintData& data);
+    virtual void paintScreen(int mask, const QRegion &region, KWin::ScreenPaintData& data);
+    virtual void paintWindow(KWin::EffectWindow* w, int mask, const QRegion &region, KWin::WindowPaintData& data);
     virtual void postPaintScreen();
     enum { NOWHERE, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT };
 

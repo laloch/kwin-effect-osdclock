@@ -7,7 +7,6 @@ find_package (Qt5 REQUIRED COMPONENTS
 )
 
 find_package (KF5 REQUIRED COMPONENTS
-    Service
     Completion
     WindowSystem
     GlobalAccel
@@ -35,7 +34,6 @@ target_link_libraries(kwin_osdclock
     KF5::Completion
     KF5::ConfigWidgets
     KF5::I18n
-    KF5::Service
     KWinEffects::KWinEffects
 )
 
@@ -46,7 +44,6 @@ target_link_libraries(kwin_osdclock_config
     KF5::Completion
     KF5::ConfigWidgets
     KF5::I18n
-    KF5::Service
 )
 
 kcoreaddons_desktop_to_json(kwin_osdclock_config osdclock_config.desktop SERVICE_TYPES kcmodule.desktop)
