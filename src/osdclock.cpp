@@ -35,6 +35,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <KLocalizedString>
 #include <math.h>
 #include <QPainter>
+#include <QPainterPath>
 #include <QPalette>
 #include <QTimer>
 #include <QVector2D>
