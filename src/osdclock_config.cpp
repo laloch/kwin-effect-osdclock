@@ -36,7 +36,7 @@ K_PLUGIN_FACTORY_WITH_JSON(OsdClockEffectConfigFactory,
                            registerPlugin<OsdClockEffectConfig>();)
 
 OsdClockEffectConfig::OsdClockEffectConfig(QWidget* parent, const QVariantList& args) :
-    KCModule(KAboutData::pluginData(QStringLiteral("kwin_osdclock")), parent, args)
+    KCModule(parent, args)
 {
     m_ui = new Ui::OsdClockEffectConfigForm;
     m_ui->setupUi(this);
